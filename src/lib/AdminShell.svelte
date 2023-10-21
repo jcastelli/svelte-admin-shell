@@ -10,7 +10,9 @@
 </script>
 
 <div class="admin-shell">
-  <Icon icon="mdi:edit-circle-outline" class="edit-icon"/>
+  <div class="edit-icons">
+    <Icon icon="mdi:edit-circle-outline" class="edit-icon" />
+  </div>
   
   {#if editing}
     <div class="icon-rail">
@@ -30,8 +32,10 @@
 <style lang="scss">
   .admin-shell {
     position: relative;
+    width: 100%;
 
-    .edit-icon {
+    .edit-icons {
+      font-size: 2rem;
       position: absolute;
       top: 0;
       right: 0;
