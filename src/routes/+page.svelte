@@ -1,19 +1,37 @@
 <script>
   import AdminShell from '$lib/AdminShell.svelte'
-  import TestComponent from './TestComponent.svelte'
+  import Header1 from './Header1.svelte'
+  import Header2 from './Header2.svelte'
+  import Header3 from './Header3.svelte'
 
   const constructors = [
     {
-      constructor: TestComponent,
+      constructor: Header1,
+      title: "Main Corporate header",
+      helpText: "If you don't know what to pick, choose this one..."
+    },
+    {
+      constructor: Header2,
+      name: "Header2",
+      title: "A the second header",
+      helpText: "This is just a static component."
+    },
+    {
+      constructor: Header3,
+      name: "ProvidedMachineName",
       title: "A regular old test component",
       helpText: "This is just a static component."
     },
   ]
+
+  let editable = true
 </script>
 
 
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>Toggle editable mode: <button on:click={()=> editable = !editable}>editable = {editable}</button></p>
+<AdminShell {constructors} {editable} componentGroupTitle="header" />
 
-<AdminShell constructors />
+
+<style lang="scss">
+
+</style>
